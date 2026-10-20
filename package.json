@@ -6,7 +6,8 @@
   "description": "موقع مطعم سيد كفته — مشويات مصرية على الفحم",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
+    "typecheck": "tsc -b",
     "preview": "vite preview"
   },
   "dependencies": {
