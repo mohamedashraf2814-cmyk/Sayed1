@@ -1,24 +1,44 @@
+/**
+ * Food photography from Unsplash and Pexels (free licenses).
+ * Every ID below was checked against its photo page. If one ever fails to load,
+ * <SafeImage> shows an on-brand fallback instead of a broken image.
+ *
+ * To use the restaurant's own photos: drop them in /public/images and replace
+ * the URL with e.g. '/images/kofta.jpg'.
+ */
 const unsplash = (id: string, w = 800) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=72`;
 
+const pexels = (id: number, w = 800) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
 export const images = {
-  hero: unsplash('photo-1529193591184-b1d58069ecdd', 1920),
-  kebab: unsplash('photo-1603360946369-dc9bb6258143'),
-  kofta: unsplash('photo-1529006557810-274b9b2fc783'),
-  tarab: unsplash('photo-1544025162-d76694265947'),
-  lambKofta: unsplash('photo-1555939594-58d7cb561ad1'),
-  lambChops: unsplash('photo-1514516345957-556ca7d90a29'),
-  steak: unsplash('photo-1600891964092-4316c288032e'),
-  hawawshi: unsplash('photo-1561651823-34feb02250e4'),
-  hawawshiLiver: unsplash('photo-1550547660-d9450f859349'),
-  hawawshiCheese: unsplash('photo-1571091718767-18b5b1457add'),
-  chicken: unsplash('photo-1598103442097-8b74394b95c6'),
-  liver: unsplash('photo-1432139555190-58524dae6a55'),
-  pigeon: unsplash('photo-1532550907401-a500c9a57435'),
-  galleryGrill: unsplash('photo-1558030006-450675393462', 1200),
-  gallerySkewers: unsplash('photo-1555939594-58d7cb561ad1', 1000),
-  galleryPlatter: unsplash('photo-1544025162-d76694265947', 1000),
+  // Meat grilling over glowing charcoal
+  hero: unsplash('photo-1601625618329-caea6f7d6fd6', 1920),
+
+  // المشويات
+  kebab: unsplash('photo-1603360946369-dc9bb6258143'), // grilled meat skewers with pita
+  kofta: pexels(32986492), // kofta kebabs
+  tarab: pexels(32986489), // mixed grill platter
+  lambKofta: pexels(14774999), // grilled kebabs on a plate
+  lambChops: unsplash('photo-1766589152485-9aafd9812a19'), // grilled lamb chops
+  steak: unsplash('photo-1614119068601-483274e9dcb7'), // steak over a flaming charcoal grill
+
+  // الحواوشي
+  hawawshi: pexels(5191844), // grilled meat-stuffed pita (arayes)
+  hawawshiLiver: pexels(28241718), // golden meat-filled bread slices
+  hawawshiCheese: pexels(28241717), // grilled stuffed bread
+
+  // الفراخ والطيور
+  chicken: unsplash('photo-1712579733874-c3a79f0f9d12'), // whole chicken on the grill
+  liver: pexels(5191833), // Middle Eastern liver dish
+  pigeon: unsplash('photo-1641873933980-fcff60026f50'), // small roasted bird
+
+  // Gallery / sections
+  galleryGrill: unsplash('photo-1508615263227-c5d58c1e5821', 1200), // tongs, grilled meat, fire
+  galleryCoal: unsplash('photo-1776766237026-47ced47d3779', 1200), // skewers over open flame
   galleryKebab: unsplash('photo-1603360946369-dc9bb6258143', 1000),
-  galleryCoal: unsplash('photo-1529193591184-b1d58069ecdd', 1000),
-  galleryBread: unsplash('photo-1561651823-34feb02250e4', 1000),
+  gallerySkewers: pexels(32986492, 1000),
+  galleryBread: pexels(5191844, 1000),
+  galleryPlatter: pexels(32986489, 1000),
 };
